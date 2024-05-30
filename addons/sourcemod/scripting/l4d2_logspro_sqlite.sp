@@ -20,7 +20,7 @@ ConVar sc_record_detail = null;
 #define PLUGIN_AUTHOR			"阿蛇"
 #define PLUGIN_VERSION			"1.0"
 #define PLUGIN_DESCRIPTION		"日志保存各种、顺便记录时长"
-#define PLUGIN_URL				""
+#define PLUGIN_URL				"https://github.com/Ashepro/l4d2_plugins/"
 #define CVAR_FLAGS				FCVAR_NOTIFY
 #define DEBUG					0
 #define DATABASE 		"clientprefs" //SQLITE 数据库
