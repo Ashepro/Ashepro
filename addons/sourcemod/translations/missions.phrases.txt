@@ -1,0 +1,562 @@
+"Phrases" 
+
+{
+	"L4D2C1"
+	
+	{
+		
+		"en" "死亡中心"
+	
+	}
+	
+	"L4D2C2"
+
+	{
+
+		"en" "黑暗嘉年华"
+
+	}
+
+	"L4D2C3"
+
+	{
+
+		"en" "沼泽吃屎"
+
+	}
+
+	"L4D2C4"
+
+	{
+
+		"en" "暴雨吃屎"
+
+	}
+
+	"L4D2C5"
+
+	{
+
+		"en" "教区"
+
+	}
+
+	"L4D2C6"
+
+	{
+
+		"en" "短暂时刻"
+
+	}
+
+	"L4D2C7"
+
+	{
+
+		"en" "牺牲"
+
+	}
+
+	"L4D2C8"
+
+	{
+
+		"en" "毫不留情"
+
+	}
+
+	"L4D2C9"
+
+	{
+
+		"en" "坠机险途"
+
+	}
+
+	"L4D2C10"
+
+	{
+
+		"en" "死亡丧钟"
+
+	}
+
+	"L4D2C11"
+
+	{
+
+		"en" "静寂时分"
+
+	}
+
+	"L4D2C12"
+
+	{
+
+		"en" "血腥收获"
+
+	}
+
+	"L4D2C13"
+
+	{
+
+		"en" "刺骨寒溪"
+
+	}
+
+	"L4D2C14"
+
+	{
+
+		"en" "最后一战"
+
+	}
+
+	"QuestionableEthics"
+
+	{
+
+		"en" "伦理问题1"
+
+	}
+
+	"CrashBandicootTheReturn"
+
+	{
+
+		"en" "崩溃的博士1"
+
+	}
+
+	"l4d2CrashBandicoot2"
+
+	{
+
+		"en" "崩溃的博士2"
+
+	}
+
+	"TanksPlayground"
+
+	{
+
+		"en" "坦克游乐场"
+
+	}
+
+
+	"YamaMSE"
+
+	{
+
+		"en" "摩耶山危机"
+
+	}
+	"Diescraper36"
+
+	{
+
+		"en" "喋血蜃楼"
+
+	}
+
+
+	"TheBloodyMoors"
+
+	{
+
+		"en" "血腥荒野"
+
+	}
+
+
+
+	"darkwood"
+
+	{
+
+		"en" "阴暗森林"
+
+	}
+
+
+	"fallen"
+
+	{
+
+		"en" "坠落"
+
+	}
+
+	"deadvacation2"
+
+	{
+
+		"en" "死亡度假2"
+
+	}
+
+	"Derailed"
+
+	{
+
+		"en" "脱轨"
+
+	}
+
+	"hauntedforest"
+
+	{
+
+		"en" "颤栗森林"
+
+	}
+
+	"drdegov21"
+
+	{
+
+		"en" "暴毙峡谷"
+
+	}
+
+	"DeadSeries"
+
+	{
+
+		"en" "连续死亡"
+
+	}
+
+	"HighwayToHell"
+
+	{
+
+		"en" "地狱之路"
+
+	}
+
+
+	"JourneyToSplashMountain"
+
+	{
+
+		"en" "飞溅山之旅"
+
+	}
+
+	"undeadzone"
+
+	{
+
+		"en" "亡灵区"
+
+	}
+	"BloodTracks"
+
+	{
+
+		"en" "血之轨迹"
+
+	}
+
+	"DeadVacationL4D2"
+
+	{
+
+		"en" "死亡假期 (Original)"
+
+	}
+
+	"DeadVacationL4D2Alt"
+
+	{
+
+		"en" "死亡假期 (Alt)"
+
+	}
+
+	"Revenge"
+
+	{
+
+		"en" "复仇"
+
+	}
+
+	"SaltHellPark"
+
+	{
+
+		"en" "盐井地狱公园"
+
+	}
+
+	"echo"
+
+	{
+
+		"en" "死亡回声 2"
+
+	}
+
+	"RunToTheHills"
+
+	{
+
+		"en" "上山"
+
+	}
+
+	"Fake"
+
+	{
+
+		"en" "Fake"
+
+	}
+
+	"2evileyes"
+
+	{
+
+		"en" "邪恶双眸"
+
+	}
+
+	"DevilMountain"
+
+	{
+
+		"en" "魔鬼山"
+
+	}
+
+	"FarewellChenming"
+
+	{
+
+		"en" "晨茗"
+
+	}
+
+	"ihatemountains2"
+
+	{
+
+		"en" "我恨山 2"
+
+	}
+
+	"QuestionableEthicsAlphaTest"
+
+	{
+
+		"en" "伦理：α测试"
+
+	}
+
+	"re2a"
+
+	{
+
+		"en" "RE2 Side A"
+
+	}
+
+	"WhiteForest"
+
+	{
+
+		"en" "白森林"
+
+	}
+
+	"PlanBv051"
+
+	{
+
+		"en" "Plan B [Beta 0.51]"
+
+	}
+
+	"Zengchengone"
+
+	{
+
+		"en" "广州增城v7.3"
+
+	}
+
+	"Zengcheng"
+
+	{
+
+		"en" "广州增城v5.12"
+
+	}
+
+	"claustrophobia"
+
+	{
+
+		"en" "幽闭恐惧症"
+
+	}
+
+	"Chernobyl"
+
+	{
+
+		"en" "切尔诺贝利"
+
+	}
+
+	"xq"
+
+	{
+
+		"en" "XINQING_v1.0"
+
+	}
+
+	"ColdCase"
+
+	{
+
+		"en" "铁证悬案：前传"
+
+	}
+
+	"ColdCaseF"
+
+	{
+
+		"en" "铁证悬案：被遗忘者"
+
+	}
+
+	"DowntimeDine"
+
+	{
+
+		"en" "市区恰饭"
+
+	}
+	"TheHive"
+
+	{
+
+		"en" "生化危机：蜂巢"
+
+	}
+	"25toLife"
+	{
+		"en"		"终身监禁"
+	}
+	"CarriedOff"
+	{
+		"en"		"绝境逢生"
+	}
+	"Centro"
+	{
+		"en"		"市中心"
+	}
+	"ddntr1"
+	{
+		"en"		"死亡陷阱"
+	}
+	"DeathWoods"
+	{
+		"en"		"死亡丛林"
+	}
+	"dotd"
+	{
+		"en"		"活死人黎明1978"
+	}
+	"EFV"
+	{
+		"en"		"逃离瓦伦西亚"
+	}
+	"Unsdwn"
+	{
+		"en"		"丧尸侵袭"
+	}
+	"salvationfalls"
+	{
+		"en"		"救赎瀑布"
+	}
+	"outline"
+	{
+		"en"		"跨越边境"
+	}
+	"quedan"
+	{
+		"en"		"玛雅遗址"
+	}
+	"TheCure"
+	{
+		"en"		"治愈"
+	}
+	"BuriedDeep"
+	{
+		"en"		"深埋"
+	}
+	"behind"
+	{
+		"en"		"别被丢下"
+	}
+	"BlackoutBasement"
+	{
+		"en"		"停电地下室"
+	}
+	"detourahead"
+	{
+		"en"		"迂回前进"
+	}
+	"heavencanwait2"
+	{
+		"en"		"天堂可die 2"
+	}
+	"UrbanDisaster"
+	{
+		"en"		"城市灾难"
+	}
+	"crashcoursererouted"
+	{
+		"en"		"坠机险途重置版"
+	}
+	"DarkCarnivalRemix"
+	{
+		"en"		"黑色狂欢节重置版"
+	}
+	"deadcenterrebirth"
+	{
+		"en"		"死亡中心：重生"
+	}
+	"ParishOverGrowth"
+	{
+		"en"		"教区过度生长"
+	}
+	"crashcourseapoc"
+	{
+		"en"		"坠机险途启示录"
+	}
+	"deathtollapoc"
+	{
+		"en"		"死亡丧钟启示录"
+	}
+	"nomercyapoc2"
+	{
+		"en"		"毫不留情启示录"
+	}
+	"bloodharvestapoc2"
+	{
+		"en"		"血腥收获启示录"
+	}
+	"BloodWoods"
+	{
+		"en"		"血腥森林启示录"
+	}
+}
