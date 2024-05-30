@@ -8,7 +8,6 @@ static char chatFile[128];
 Handle fileHandle = null;
 ConVar sc_record_detail = null;
 
-
 /*
 	大部分代码来源:
 	citkabuto => SaveChat
@@ -23,24 +22,22 @@ ConVar sc_record_detail = null;
 #define PLUGIN_DESCRIPTION		"日志保存各种、顺便记录时长"
 #define PLUGIN_URL				""
 #define CVAR_FLAGS				FCVAR_NOTIFY
-
 #define DEBUG					0
 #define DATABASE 		"clientprefs" //SQLITE 数据库
 
-
-
-
-// 存放修改后地图名称/游戏描述/模式名的变量
+LMM_GAMEMODE gamemode;	
 char
-	logMapName[64];
-
-// 存放数值的变量
+	logMapName[64],
+	MapName[64],
+	MissionName[64],
+	imapName[64];
 int
-
+	missionIndex,
+	mapmaxnum,
+	mapnow,
 	failedtime,
 	playtimes[MAXPLAYERS + 1],
 	staticplaytimes[MAXPLAYERS + 1];
-
 
 public Plugin myinfo = 
 {
@@ -53,8 +50,6 @@ public Plugin myinfo =
 
 
 public void OnPluginStart() {
-	
-//阿蛇新增-----------------------------------------------------------------------------------
 	char date[21];
 	char logFile[100];
 
@@ -81,34 +76,11 @@ public void OnPluginStart() {
 	HookEvent("mission_lost", mission_lost, EventHookMode_Pre);
 	HookEvent("finale_win", finale_win, EventHookMode_Pre);
 	CreateDBTable();
-	
-	RegConsoleCmd("sm_sj", Command_SJ);
-//阿蛇新增-----------------------------------------------------------------------------------	
-	
-	
+
+	RegConsoleCmd("sm_sj", Command_SJ);//查服务器内时间
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//阿蛇新增-----------------------------------------------------------------------------------
 public Action Command_Say(int client, int args)
 {
 	LogChat(client, args, false);
@@ -177,8 +149,6 @@ public void OnClientPostAdminCheck(int client)
 	
 }
 
-
-
 public void Event_PlayerDisconnect(Event event, const char[] name, bool dontBroadcast)
 {
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
@@ -227,8 +197,6 @@ public void Event_PlayerDisconnect(Event event, const char[] name, bool dontBroa
 	playtimes[client] = 0; //清除玩家缓存时长 
 	
 }
-
-
 
 /*
  * Extract all relevant information and format 
@@ -281,7 +249,6 @@ public void LogChat(int client, int args, bool teamchat)
 	SaveMessage(msg);
 }
 
-
 /*
  * Log the message to file
  */
@@ -291,9 +258,6 @@ public void SaveMessage(const char[] message)
 	WriteFileLine(fileHandle, message);
 	CloseHandle(fileHandle);
 }
-
-
-
 
 Database ConnectDB()
 {
@@ -456,8 +420,6 @@ int SaveToDB(int client) //更新时长 返回的是影响行数没啥用 主要
 	return affectRows;
 }
 
-
-
 /*
 public void SaveAll() //存全体时长 退出才记录 不用了
 {
@@ -466,7 +428,6 @@ public void SaveAll() //存全体时长 退出才记录 不用了
 	if(rs>0) PrintToServer("[Shop] Auto Update Successfully! Affected rows: %d", rs); //更新行数-等于游戏人数
 }
 */
-
 
 public void UPpdateAll() //更新全体时长(未存数据库)
 {
@@ -481,7 +442,6 @@ public void UPpdateAll() //更新全体时长(未存数据库)
 			}
 	}
 }
-
 
 //查询时长
 public Action Command_SJ (int client, int args)
@@ -498,12 +458,6 @@ public Action Command_SJ (int client, int args)
 	PrintToChat(client, "\x03当前服内游玩时长：\x04%d\x03时\x04%d\x03分", PlaysjH, PlaysjM);
 	return Plugin_Continue;
 }
-
-//阿蛇新增-----------------------------------------------------------------------------------
-
-
-
-
 
 // 地图开始
 public void OnMapStart() {
@@ -527,10 +481,6 @@ public void OnMapStart() {
 	SaveMessage("____________________________________________________________________________________________");
 	SaveMessage(msg);
 	SaveMessage("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-	
-	
-
-	
 }
 
 //团灭mission_lost
@@ -551,6 +501,7 @@ public void mission_lost(Event event, const char[] name, bool dontBroadcast)
 	Format(msg, sizeof(msg), "--====================================团灭————%s次====================================--", restartcount);
 	SaveMessage(msg);
 }
+
 //上救援finale_win
 public void finale_win(Event event, const char[] name, bool dontBroadcast)
 {
@@ -558,13 +509,11 @@ public void finale_win(Event event, const char[] name, bool dontBroadcast)
 	UPpdateAll();
 }
 
-// 地图结束
-public void OnMapEnd() {
-
+// 地图结束（有点刷屏了，不用了）
 /*	
+public void OnMapEnd() {
 	ChangeMapName();
-	
-	
+
 	char msg[1024];
 	char date[32];
 	char time[32];
@@ -580,26 +529,12 @@ public void OnMapEnd() {
 	SaveMessage("____________________________________________________________________________________________");
 	SaveMessage(msg);
 	SaveMessage("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-*/
 }
+*/
 
-//获取地图信息
-
-char
-	MapName[64],
-	MissionName[64],
-	imapName[64];
-
-int
-	missionIndex,
-	mapmaxnum,
-	mapnow;
-
-LMM_GAMEMODE gamemode;
-
-// 更新地图名
+// 获取地图信息,更新地图名
 void ChangeMapName() {
-	// 获取地图文件名
+	// 获取地图文件名 例如:(c2m1_higtway)
 	GetCurrentMap(MapName, sizeof(MapName));
 	gamemode=LMM_GetCurrentGameMode();
 
@@ -616,7 +551,7 @@ void ChangeMapName() {
 	}
 	LMM_GetMissionName(gamemode, missionIndex, MissionName, sizeof(MissionName));
 
-	Format(MapName, sizeof(MapName), "%T", MapName, 0);	// 当前地图所在的任务译名 (ex. L4D2C1 => 死亡中心)
-	Format(MissionName, sizeof(MissionName), "%T", MissionName, 0);	// 当前地图的章节译名 (ex. c1m1_hotel => 1:酒店)
-	FormatEx(logMapName, sizeof(logMapName), "%s [%s] [%d/%d]", MissionName, MapName, mapnow, mapmaxnum); // ex. 死亡中心 [1: 酒店] [1/4]
+	Format(MapName, sizeof(MapName), "%T", MapName, 0);	// 关卡翻译名 (黑色狂欢节)
+	Format(MissionName, sizeof(MissionName), "%T", MissionName, 0);	// 地图翻译名 (高速公路)
+	FormatEx(logMapName, sizeof(logMapName), "%s [%s] [%d/%d]", MissionName, MapName, mapnow, mapmaxnum); // 黑色狂欢节 [高速公路] [1/5]
 }
