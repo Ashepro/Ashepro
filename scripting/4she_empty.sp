@@ -1,6 +1,6 @@
 /*
 	24-7-15
-	大部分从acs插件里扣的
+	从acs插件里扣的
 
 */
 #pragma semicolon 1
