@@ -73,7 +73,7 @@ public void Event_charge_end(Event event, const char[] name ,bool Broadcast)
 public void OnMapStart()
 {
 
-	g_BeamSprite = PrecacheModel("materials/sprites/laserbeam.vmt", true);//laserbeam //lightning001 //
+	g_BeamSprite = PrecacheModel("materials/sprites/lightning002.vmt", true);//laserbeam //lightning001 //
 }
 
 public Action Command_CPmenu(int client, int args)
@@ -88,7 +88,7 @@ public Action VIPHy(int Client)
 	KillTimer(Onoff[Client]); //ashe add
 	else
 	{
-		Onoff[Client] = CreateTimer(0.7, on, Client, 3);
+		Onoff[Client] = CreateTimer(0.01, on, Client, 3);
 		TriggerTimer(Onoff[Client]);
 	}
 	return Plugin_Handled;
@@ -96,11 +96,11 @@ public Action VIPHy(int Client)
 
 public Action on(Handle timer, any Client)
 {
-	SetUpBeamSpirit(Client, 1.5, 5.0, 100);//Life, width, Alpha
+	SetUpBeamSpirit(Client, 100);
 	return Plugin_Handled;
 }
 
-void SetUpBeamSpirit(int Client, float Life, float width, int Alpha) // 
+void SetUpBeamSpirit(int Client,int Alpha) // 
 {
 	if (IsClientInGame(Client))
 	{
@@ -162,9 +162,9 @@ void SetUpBeamSpirit(int Client, float Life, float width, int Alpha) //
 						}
 					}
 					*/
-					TE_SetupBeamFollow(mr_Noob[Client], g_BeamSprite, 100, Life, width, 5.0, 3, col);
+					TE_SetupBeamFollow(mr_Noob[Client], g_BeamSprite, 100, 0.1, 50.0, 50.0, 3, col);//Life, width
 					TE_SendToAll(0.0);
-					TE_SetupBeamFollow(mr_Noob[Client], g_BeamSprite, 100, Life, 0.5, 0.5, 3, col2);
+					TE_SetupBeamFollow(mr_Noob[Client], g_BeamSprite, 100, 0.1, 50.0, 50.0, 3, col2);//Life, width
 					TE_SendToAll(0.0);
 					//g_BeamObject[Client] = mr_Noob[Client];
 					CreateTimer(3.0, DeleteParticles, mr_Noob[Client], 0);
